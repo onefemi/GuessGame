@@ -1,10 +1,12 @@
 
-var guesses =[];
-var guess =[parseInt(Math.random() * 10),parseInt(Math.random() * 10),parseInt(Math.random() * 10),parseInt(Math.random() * 10),parseInt(Math.random() * 10)];
-var status = '';
-var ran;
+let guesses = [];
+let guess = [];
+let dstatus;
+let ran;
 
 do{
+    guesses =[];
+    guess =[parseInt(Math.random() * 10),parseInt(Math.random() * 10),parseInt(Math.random() * 10),parseInt(Math.random() * 10),parseInt(Math.random() * 10)];
     ran = parseInt(Math.random() * 10);    
     console.log(ran);
     for(i = 0; i < 5; i++) {
@@ -12,7 +14,7 @@ do{
         if (guess[i] == ran) {
             //console.log = 'correct';
             guesses.push(guess[i]);
-            status = 'You Won!';
+            dstatus = 'You Won!';
             break;
         }else{
             if(guesses.includes(guess[i])){
@@ -20,10 +22,10 @@ do{
             }else{
                 guesses.push(guess[i]);
             }
-            status = 'You Lose!';                
+            dstatus = 'You Lose!';                
         }        
 
     }
     console.log('Your guesses are ' + guesses + ' and the correct number is ' + ran);
-    console.log(status);
-} while(status != 'You Won!');
+    console.log(dstatus);
+} while(dstatus != 'You Won!');
